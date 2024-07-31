@@ -39,6 +39,7 @@ In this scenario, whenever the user interacts with the app (initiated by pressin
     - Open the Random-Quote-Generator in Qt Creator by choosing `file -> Open file or Project` then navigate to where you cloned the repository and choose `Random_Quote_Generator.pro`
     - Configure the project using your desired kit.
     - Build the project using the Build menu.
+    - Run the project
 
 # How to Use
 
