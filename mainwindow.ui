@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>907</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>891</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>867</width>
+       <height>641</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Login">
+      <attribute name="title">
+       <string>Login</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>150</y>
+         <width>771</width>
+         <height>92</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Times New Roman</family>
+              <pointsize>20</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="text">
+             <string>User Name  :-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="UserName">
+            <property name="font">
+             <font>
+              <family>Times New Roman</family>
+              <pointsize>15</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="LoginButton">
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>Login</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>290</y>
+         <width>511</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="NewQuote">
+      <attribute name="title">
+       <string>New Quote</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>20</y>
+         <width>551</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Create New Quote</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>46</x>
+          <y>50</y>
+          <width>461</width>
+          <height>66</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>10</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Choose Emotion :-</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="EmotionBox">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>10</pointsize>
+               <italic>true</italic>
+               <bold>true</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <item>
+              <property name="text">
+               <string>Happy</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Sad</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Angry</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Neutral</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="StartButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_7">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>320</y>
+         <width>551</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Output</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>471</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QListWidget" name="Output">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>10</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Clear">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="Exit_2">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>570</y>
+         <width>291</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_10">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>190</y>
+         <width>551</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Store or Restore Quote</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>27</y>
+          <width>521</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="Store">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Store Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>10</pointsize>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                 <strikeout>false</strikeout>
+                </font>
+               </property>
+               <property name="text">
+                <string>Index :-</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="Index">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>10</pointsize>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Restore">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>10</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Restore Data</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>907</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
