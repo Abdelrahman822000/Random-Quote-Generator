@@ -2,7 +2,6 @@
 
 # Table of Contents
 - [Quote Generator](#quote-generator)
-  - [Example](#example)
   - [About the App](#about-the-app)
   - [App Task](#app-task)
 - [Instructions](#instructions)
@@ -13,34 +12,45 @@
 
 The Quote Generator app is designed to provide quotes based on user emotions, with a chain of responsibility pattern to handle different types of emotions.
 
-## Example
-
-Let’s illustrate this with a creative example named “Emotional Quotes.”
-
 ## About the App
 
 The Quote Generator app categorizes quotes into different emotions (Happy, Sad, Angry, Neutral). Depending on the user's emotion, the app fetches a relevant quote from the appropriate category. 
 
 ## App Task
 
-In this scenario, whenever the user interacts with the app (initiated by pressing buttons), a quote is displayed based on the user's selected emotion. The app also supports storing and restoring quotes states using a backup mechanism.
+In this scenario, whenever the user interacts with the app (initiated by pressing Start Button), a quote is displayed based on the user's selected emotion. The app also supports storing and restoring quotes states using a backup mechanism.
 
 # Instructions
 
-1. **Check Dependencies:** Ensure you have the necessary Qt libraries installed.
-2. **Build the App:** Compile the app using your preferred C++ compiler. Make sure to include the Qt framework.
-3. **Prepare Files:**
-   - Ensure all header and source files are in the same directory.
-4. **Run the App:**
-   - Execute the compiled binary to start the application.
+### Prerequisites
+
+- Qt Creator
+- Qt 6.7.1 or higher
+- C++ compiler (e.g., GCC, MinGW)
+
+### Steps
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Abdelrahman822000/Random-Quote-Generator.git
+    cd Random-Quote-Generator
+    ```
+2. **Build the project:**
+    - Open the Random-Quote-Generator in Qt Creator by choosing `file -> Open file or Project` then navigate to where you cloned the repository and choose `Random_Quote_Generator.pro`
+    - Configure the project using your desired kit.
+    - Build the project using the Build menu.
 
 # How to Use
 
-- **Press Start:** To get a quote based on the selected emotion.
-- **Press Store:** To store the current state of quotes.
-- **Press Restore:** To restore a previously stored quote state.
-- **Press Clear:** To clear the displayed quote.
-- **Press Exit:** To exit the application.
+- **Login:** Enter your username then press Login. ![LoginPage](https://github.com/user-attachments/assets/b8933589-9a94-4766-a06b-f4c5755197a0)
+
+- **Generate new Quote:** Choose your emotion and press Start![New Quote](https://github.com/user-attachments/assets/4af9418b-5a28-4546-ac8a-8d104bdcfdd4)
+
+- **Store & Restore:** Store the current state of quote or restore a previously stored quote state. ![Store and Restore](https://github.com/user-attachments/assets/76ac1b01-9460-4381-bee8-30d2019c95f0)
+
+- **Clear:** Clear the Output field.
+- **Exit:** Press exit to return to the login page. ![Output and Exit](https://github.com/user-attachments/assets/48725e3e-9232-4f98-b7e5-56a7e0eaac2b)
+
 
 # Contact
 
