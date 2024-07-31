@@ -1,0 +1,14 @@
+debug/AngryQuoteAgent.o
+debug/BackupManager.o
+debug/Client.o
+debug/HappyQuoteAgent.o
+debug/Memento.o
+debug/NeutralQuoteAgent.o
+debug/Quote.o
+debug/QuoteController.o
+debug/QuoteDatabase.o
+debug/SadQuoteAgent.o
+debug/User.o
+debug/main.o
+debug/mainwindow.o
+debug/moc_mainwindow.o

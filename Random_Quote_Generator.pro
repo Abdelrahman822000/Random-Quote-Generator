@@ -9,41 +9,41 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AngryQuoteAgent.cpp \
-    BackupManager.cpp \
-    Client.cpp \
-    HappyQuoteAgent.cpp \
-    Memento.cpp \
-    NeutralQuoteAgent.cpp \
-    Quote.cpp \
-    QuoteController.cpp \
-    QuoteDatabase.cpp \
-    SadQuoteAgent.cpp \
-    User.cpp \
-    main.cpp \
-    mainwindow.cpp
+    src\AngryQuoteAgent.cpp \
+    src\BackupManager.cpp \
+    src\Client.cpp \
+    src\HappyQuoteAgent.cpp \
+    src\Memento.cpp \
+    src\NeutralQuoteAgent.cpp \
+    src\Quote.cpp \
+    src\QuoteController.cpp \
+    src\QuoteDatabase.cpp \
+    src\SadQuoteAgent.cpp \
+    src\User.cpp \
+    src\main.cpp \
+    src\mainwindow.cpp
 
 HEADERS += \
-    AngryQuoteAgent.hpp \
-    BackupManager.hpp \
-    Client.hpp \
-    HappyQuoteAgent.hpp \
-    Include_Classes.hpp \
-    Includes.hpp \
-    Memento.hpp \
-    NeutralQuoteAgent.hpp \
-    Quote.hpp \
-    QuoteAbstract.hpp \
-    QuoteAgent.hpp \
-    QuoteController.hpp \
-    QuoteDatabase.hpp \
-    SadQuoteAgent.hpp \
-    User.hpp \
-    UserEmotion.hpp \
-    mainwindow.h
+    src\AngryQuoteAgent.hpp \
+    src\BackupManager.hpp \
+    src\Client.hpp \
+    src\HappyQuoteAgent.hpp \
+    src\Include_Classes.hpp \
+    src\Includes.hpp \
+    src\Memento.hpp \
+    src\NeutralQuoteAgent.hpp \
+    src\Quote.hpp \
+    src\QuoteAbstract.hpp \
+    src\QuoteAgent.hpp \
+    src\QuoteController.hpp \
+    src\QuoteDatabase.hpp \
+    src\SadQuoteAgent.hpp \
+    src\User.hpp \
+    src\UserEmotion.hpp \
+    src\mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    src\mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -51,4 +51,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    quotes.txt
+    Quotes\quotes.txt
