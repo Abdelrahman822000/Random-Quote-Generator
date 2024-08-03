@@ -40,7 +40,7 @@ private:
     UserEmotion emotion;
     QString user;
     User *userPtr;
-    QMessageBox msgBox; // Message box for showing messages
+    QMessageBox *msgBox; // Message box for showing messages
     void showMessageBox(QString title, QString text, QMessageBox::Icon icon, QMessageBox::StandardButton button); // Utility function for showing message boxes
 
 };

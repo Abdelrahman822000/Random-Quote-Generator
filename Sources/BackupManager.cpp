@@ -11,7 +11,7 @@ BackupManager &BackupManager::getInstance()
 // Method to save a Memento object
 void BackupManager::saveState(const Memento &memento)
 {
-    mementos.push_back(memento);
+    mementos.append(memento);
 }
 
 // Method to restore a Memento object by index
@@ -31,4 +31,21 @@ Memento BackupManager::restoreState(qsizetype index)
         qCritical() << "No states to restore!" << Qt::endl;
         return Memento("", UserEmotion::NOEMOTION); // Default state if no mementos are available
     }
+}
+
+void BackupManager::addUser(const User &user)
+{
+    users.append(user);
+}
+
+User *BackupManager::findUserByName(const QString &username)
+{
+    for (User& user : users)
+    {
+        if (user.getUserName() == username)
+        {
+            return &user;
+        }
+    }
+    return nullptr;
 }

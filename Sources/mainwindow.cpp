@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    msgBox = new QMessageBox(this);
+
     // Load and scale the logo image, then set it to label_2
     QPixmap Pix("../../../Logos/Logo.jpg");
 
@@ -31,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete userPtr;
 }
 
 void MainWindow::on_LoginButton_clicked()
@@ -38,8 +41,17 @@ void MainWindow::on_LoginButton_clicked()
     QString userName = ui->UserName->text();
 
     user = userName;
-    userPtr = new User(user);
-
+    User* existingUser = BackupManager::getInstance().findUserByName(user);
+    if (existingUser)
+    {
+        showMessageBox("Welcome back", "Hello " + user + ".", QMessageBox::Information, QMessageBox::Ok);
+        userPtr = existingUser;
+    }
+    else
+    {
+        showMessageBox("Welcome", "Hello " + user + ".", QMessageBox::Information, QMessageBox::Ok);
+        userPtr = new User(user);
+    }
     ui->tabWidget->setTabEnabled(0,false);
     ui->tabWidget->setTabEnabled(1,true);
     ui->tabWidget->setCurrentIndex(1);
@@ -85,15 +97,33 @@ void MainWindow::on_StartButton_clicked()
     {
         Emotion = "No Emotion";
     }
-    ui->Output->addItem("Counter Emotion: " + Emotion);
-    ui->Output->addItem("Quote: " + quote->getContent());
+    if(quote->getContent().isEmpty())
+    {
+        showMessageBox("Failed to generate quote", "Couldn\'t generate quote for the given emotion", QMessageBox::Warning, QMessageBox::Ok);
+    }
+    else
+    {
+        showMessageBox("Quote generated", "Quote: " + quote->getContent(), QMessageBox::Information, QMessageBox::Ok);
+        ui->Output->addItem("Counter Emotion: " + Emotion);
+        ui->Output->addItem("Quote: " + quote->getContent());
+    }
+
 }
 
 void MainWindow::on_Store_clicked()
 {
     Memento memento = quote->saveStateToMemento();
-    BackupManager::getInstance().saveState(memento);
-    ui->Output->addItem("Stored current state");
+    if(quote->getContent().isEmpty())
+    {
+        showMessageBox("Quote not stored", "No quote to store", QMessageBox::Warning, QMessageBox::Ok);
+    }
+    else
+    {
+        BackupManager::getInstance().saveState(memento);
+        showMessageBox("Quote stored", "Stored current quote", QMessageBox::Information, QMessageBox::Ok);
+        ui->Output->addItem("Stored current quote");
+    }
+
 }
 
 
@@ -101,17 +131,25 @@ void MainWindow::on_Restore_clicked()
 {
     int index = ui->Index->text().toInt();
 
-    ui->Output->addItem("Restored state with index: " + QString::number(index));
-
     if(index >= 1)
     {
         index -= 1;
     }
 
     Memento memento = BackupManager::getInstance().restoreState(index);
+    if(memento.getContent().isEmpty())
+    {
+        showMessageBox("Restoring Failed", "No quote at index: " + QString::number(index+1), QMessageBox::Warning, QMessageBox::Ok);
+        ui->Output->addItem("No quote at index: " + QString::number(index+1));
+    }
+    else
+    {
+        showMessageBox("Quote restored", "Restored quote with index: " + QString::number(index+1) + "\nQuote: " + memento.getContent(), QMessageBox::Information, QMessageBox::Ok);
+        ui->Output->addItem("Restored quote with index: " + QString::number(index+1));
+        ui->Output->addItem("Emotion: " + memento.getEmotion());
+        ui->Output->addItem("Quote: " + memento.getContent());
+    }
 
-    ui->Output->addItem("Emotion: " + memento.getEmotion());
-    ui->Output->addItem("Quote: " + memento.getContent());
 }
 
 void MainWindow::on_Clear_clicked()
@@ -122,6 +160,11 @@ void MainWindow::on_Clear_clicked()
 
 void MainWindow::on_Exit_2_clicked()
 {
+    BackupManager::getInstance().addUser(*userPtr);
+
+    ui->Index->clear();
+    ui->Output->clear();
+
     ui->tabWidget->setTabEnabled(0,true);
     ui->tabWidget->setTabEnabled(1,false);
     ui->tabWidget->setCurrentIndex(0);
@@ -129,11 +172,11 @@ void MainWindow::on_Exit_2_clicked()
 
 void MainWindow::showMessageBox(QString title, QString text, QMessageBox::Icon icon, QMessageBox::StandardButton button)
 {
-    msgBox.setWindowTitle(title);        // Set the title of the message box
-    msgBox.setText(text);                // Set the text of the message box
-    msgBox.setIcon(icon);                // Set the icon of the message box
-    msgBox.setStandardButtons(button);  // Set the standard buttons of the message box
-    msgBox.adjustSize();                 // Adjust the size of the message box
-    msgBox.exec();                       // Show the message box
+    msgBox->setWindowTitle(title);        // Set the title of the message box
+    msgBox->setText(text);                // Set the text of the message box
+    msgBox->setIcon(icon);                // Set the icon of the message box
+    msgBox->setStandardButtons(button);  // Set the standard buttons of the message box
+    msgBox->adjustSize();                 // Adjust the size of the message box
+    msgBox->exec();                       // Show the message box
 }
 

@@ -1,10 +1,10 @@
 #include "Headers\User.hpp"
 
 // Default Constructor
-User::User() {}
+User::User() : name(""), emotion(UserEmotion::NOEMOTION), count(0) {}
 
 // Parameterized Constructor
-User::User(const QString &name) : name(name), count(0) {}
+User::User(const QString &name) : name(name), emotion(UserEmotion::NOEMOTION), count(0) {}
 
 UserEmotion User::getUserEmotion(QString choice)
 {
@@ -32,7 +32,7 @@ UserEmotion User::getUserEmotion(QString choice)
     return emotion;
 }
 
-QString User::getUserName()
+QString User::getUserName() const
 {
     return name;
 }
@@ -60,4 +60,9 @@ bool User::isWorthy()
 void User::increaseCount()
 {
     count++;
+}
+
+qint32 User::getCount() const
+{
+    return count;
 }

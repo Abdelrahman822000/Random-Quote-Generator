@@ -3,7 +3,6 @@
 
 #include <Headers\Includes.hpp>
 #include <Headers\UserEmotion.hpp>
-#include <Headers\BackupManager.hpp>
 
 // User Interface Class
 class User
@@ -20,9 +19,10 @@ class User
         User(const QString &name);
 
         UserEmotion getUserEmotion(QString choice); // Getter to get User emotion
-        QString getUserName();    // Getter to get User name
+        QString getUserName() const;  // Getter to get User name
         bool isWorthy();              // Determine if User is worthy or not
         void increaseCount();         // Increase count
+        qint32 getCount() const;
 };
 
 #endif
