@@ -1,4 +1,4 @@
-**This App was made by Abdelrahman Mohamed Hamad**
+**This Project was developed by Abdelrahman Mohamed Hamad**
 
 # Table of Contents
 - [Quote Generator](#quote-generator)
