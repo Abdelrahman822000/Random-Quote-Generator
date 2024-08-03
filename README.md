@@ -40,6 +40,7 @@ In this scenario, whenever the user interacts with the app (initiated by pressin
     - Configure the project using your desired kit.
     - Build the project using the Build menu.
     - Run the project
+    - Alternative: Go to `build\Desktop_Qt_6_7_0_MinGW_64_bit-Release\release` and run the `Random_Quote_Generator.exe` executable.
 
 # How to Use
 
